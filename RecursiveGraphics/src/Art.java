@@ -1,10 +1,10 @@
 /**
  * <pre>
- * Name:
+ * Name: Kavya Srikumar
  * Mrs. Kankelborg
- * Period
+ * Period 3
  * Project 2 Recursive Art Project Part 3: Art
- * Revision History:
+ * Revision History: 
  *
  * Class Description:
  * </pre>

@@ -1,9 +1,9 @@
 /**
- * Name:
+ * Name: Kavya Srikumar
  * Mrs. Kankelborg
- * Period 
+ * Period 3
  * Project 2 Recursive Art Project Part 2: Sierpinski 
- * Last Updated:
+ * Last Updated: 12/10/21
  * 
  * Class Description:
  */
