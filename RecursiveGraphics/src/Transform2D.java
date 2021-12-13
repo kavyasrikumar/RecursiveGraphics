@@ -76,7 +76,7 @@ public class Transform2D {
 	 */
 	public static void main (String[] args) 
 	{
-		StdDraw.setScale(-4.0, 4.0);
+		/*StdDraw.setScale(-4.0, 4.0);
 		
 		double[] x = {1, 2, 2, 1};
 		double[] y = {1, 1, 3, 2};
@@ -86,6 +86,6 @@ public class Transform2D {
 		Transform2D.rotate(x, y, 90.0);
 		StdDraw.setPenColor(StdDraw.RED);
 		StdDraw.polygon(x, y);
-		
+		*/
 	}
 }

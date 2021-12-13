@@ -3,7 +3,7 @@
  * Mrs. Kankelborg
  * Period 3
  * Project 2 Recursive Art Project Part 2: Sierpinski 
- * Last Updated: 12/10/21
+ * Last Updated: 12/13/21
  * 
  * Class Description:
  */
@@ -18,7 +18,12 @@ public class Sierpinski {
      */
     public static void sierpinski(int n)
     {
+    	double[] x = {0, 1, 0.5};
+    	double[] y = {0, 0, Math.sqrt(3) * 0.5};
     	
+    	StdDraw.polygon(x, y);
+    	
+    	sierpinski(n, 0.5, 0, 0.5);
     }
     
     /**
@@ -28,6 +33,17 @@ public class Sierpinski {
     private static void sierpinski(int n, double x, double y, double length)
     {
     	
+    	if (n != 0) 
+    	{
+    		filledTriangle(x, y, length);
+    		
+    		double height = height(length);
+    		
+    		sierpinski(n-1, x, y + height, length / 2);
+    		sierpinski(n-1, x + length / 2, y, length / 2);
+    		sierpinski(n-1, x - length / 2, y, length / 2);
+    		
+    	}
     }
     
 	/**
@@ -36,7 +52,7 @@ public class Sierpinski {
 	 */
     private static double height(double length)
     {
-    	return 0.0;
+    	return (length * Math.sqrt(3) * 0.5);
     }
 
     /**
@@ -45,6 +61,10 @@ public class Sierpinski {
      */
     private static void filledTriangle(double x, double y, double length)
     {
+    	double height = height(length);
+    	double[] xCoord = {x, x - (0.5 * length), x + (0.5 * length)};
+    	double[] yCoord = {y, y + height, y + height};
     	
+    	StdDraw.filledPolygon(xCoord, yCoord);
     } 
 }
