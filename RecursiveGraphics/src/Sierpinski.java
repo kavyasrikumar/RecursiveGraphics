@@ -6,6 +6,9 @@
  * Last Updated: 12/13/21
  * 
  * Class Description:
+ * This class plots a Sierpinski triangle of order n to standard drawing. After drawing the outline
+ * and one filled equilateral triangle that points downwards, there are three recursive calls to fill 
+ * all three spaces around each side of the downwards triangle accordingly. 
  */
 
 public class Sierpinski {
@@ -18,11 +21,14 @@ public class Sierpinski {
      */
     public static void sierpinski(int n)
     {
+    	// creates two double arrays with the x and y coordinates for the outline triangle
     	double[] x = {0, 1, 0.5};
     	double[] y = {0, 0, Math.sqrt(3) * 0.5};
     	
+    	// draws the outline triangle
     	StdDraw.polygon(x, y);
     	
+    	// calls the overloaded sierpinski method that fits snugly within the outline 
     	sierpinski(n, 0.5, 0, 0.5);
     }
     
@@ -32,13 +38,17 @@ public class Sierpinski {
      */
     private static void sierpinski(int n, double x, double y, double length)
     {
-    	
+    	// continue recursion until n is zero
     	if (n != 0) 
     	{
+    		// draw a filled triangle with bottom vertex (x, y) and sides of length length
     		filledTriangle(x, y, length);
     		
+    		// calculates the height for the current triangle
     		double height = height(length);
     		
+    		// calls sierpinski recursively three times to add the appropriate filled triangles
+    		// on all three sides of the previous filled triangle
     		sierpinski(n-1, x, y + height, length / 2);
     		sierpinski(n-1, x + length / 2, y, length / 2);
     		sierpinski(n-1, x - length / 2, y, length / 2);
