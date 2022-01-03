@@ -6,13 +6,15 @@ public class ArtRunner
     public static void main(String[] args)
     {
         openingCredits();
-        Art.draw(1);
+        Art.draw(4);
+        waitToAdvance();
+        Art.draw(2);
         waitToAdvance();
         Art.draw(3);
         waitToAdvance();
-        Art.draw(6);
+        Art.draw(4);
         waitToAdvance();
-        Art.draw(7);
+        Art.draw(5);
         waitToAdvance();
     }
 
